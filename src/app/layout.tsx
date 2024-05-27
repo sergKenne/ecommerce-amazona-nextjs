@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.scss";
+import Header from "@/components/Header";
+import SvgSprites from "@/svgSprites/SvgSprites";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
+        <SvgSprites/>
         <div className="wrapper">
-          <main>
+          <Header />
+          <main className="container">
             {children}
           </main>
           
